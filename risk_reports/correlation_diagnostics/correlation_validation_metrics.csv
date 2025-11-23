@@ -1,0 +1,2 @@
+Series,Independence_Passed,Max_Correlation,Ljung_Box_Statistic,Ljung_Box_pvalue,Durbin_Watson_Statistic,Significant_Lags_Count,Significant_Lags
+BTC_Returns,True,0.1776269193273546,0.011653055717842644,0.9140358938611448,1.9888216160398409,1,2

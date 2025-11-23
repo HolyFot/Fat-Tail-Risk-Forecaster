@@ -1,0 +1,77 @@
+================================================================================
+CORRELATION AND INDEPENDENCE VALIDATION REPORT
+================================================================================
+Generated: 2025-10-17 12:04:11
+Validation Parameters:
+  - Maximum Lags: 20
+  - Significance Level: 0.01
+  - Correlation Threshold: 0.5
+  - Ljung-Box Test Lags: [1, 5, 10, 20]
+
+EXECUTIVE SUMMARY
+----------------------------------------
+Total Series Validated: 1
+Independence Tests Passed: 1
+Overall Pass Rate: 100.0%
+
+Overall Assessment: EXCELLENT - Strong evidence of independence
+
+DETAILED VALIDATION RESULTS
+==================================================
+
+Series: BTC_Returns
+-------------------
+Independence Status: ✅ PASSED
+
+Autocorrelation Function (ACF) Analysis:
+  Maximum |ACF|: 0.1776
+  Significant ACF Lags: [2]
+  Number of Significant ACF Lags: 1
+
+Partial Autocorrelation Function (PACF) Analysis:
+  Maximum |PACF|: 0.1776
+  Significant PACF Lags: [2]
+  Number of Significant PACF Lags: 1
+  Suggested AR Order: 2
+
+Statistical Tests:
+  Ljung-Box Statistic: 0.0117
+  Ljung-Box p-value: 0.914036
+  Durbin-Watson Statistic: 1.9888
+
+Interpretation:
+  Ljung-Box Test: No significant serial correlation detected
+  Durbin-Watson Test: No first-order autocorrelation
+  PACF Analysis: Low-order AR structure suggested (AR(2))
+
+RECOMMENDATIONS
+========================================
+✅ All series passed independence tests
+✅ Model assumptions appear to be satisfied
+✅ Residual correlation analysis shows good model fit
+
+TECHNICAL DETAILS
+========================================
+ACF/PACF Computation:
+  - ACF computed using sample autocovariances
+  - PACF computed via Yule-Walker equations
+  - Confidence intervals use Bartlett's formula for ACF
+  - PACF confidence intervals assume asymptotic normality
+
+Statistical Tests:
+  - Ljung-Box: Tests for serial correlation up to specified lags
+  - Durbin-Watson: Tests for first-order autocorrelation
+  - Significance level: 5% for all tests
+
+Independence Criteria:
+  1. Ljung-Box p-value > 0.05
+  2. Maximum |ACF| < correlation threshold
+  3. Less than 5% of ACF lags significantly autocorrelated
+  4. PACF pattern consistent with white noise or low-order AR
+
+ACF/PACF Interpretation Guide:
+  - White Noise: No significant ACF or PACF beyond lag 0
+  - AR(p): PACF cuts off after lag p, ACF decays exponentially
+  - MA(q): ACF cuts off after lag q, PACF decays exponentially
+  - ARMA(p,q): Both ACF and PACF decay exponentially
+  - Non-stationary: ACF decays very slowly, PACF has large lag-1 value
